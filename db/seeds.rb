@@ -1,4 +1,4 @@
-require_relative(".models/students.rb")
+require_relative(".models/students_methods.rb")
 
 Student.delete_all()
 
