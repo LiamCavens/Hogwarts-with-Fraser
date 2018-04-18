@@ -1,16 +1,18 @@
-require('sinarta')
+require('sinatra')
 require('sinatra/contrib/all')
 require('pry-byebug')
-require_relative('./models/students.rb')
+require_relative('./models/students_methods.rb')
 
 #index
-get "/dogwarts" do 
+get "/hogwarts" do 
     @students = Student.all()
     erb(:index)
 end
 
 #new
-
+get "hogwarts/new" do
+    erb(:new)
+end
 #show
 
 #create

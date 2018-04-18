@@ -49,7 +49,7 @@ class Student
         return result = Student.new(student.first)
     end
 
-    def delete_all()
+    def self.delete_all()
         sql = "DELETE FROM students"
         SqlRunner.run(sql)
     end
