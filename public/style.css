@@ -1,6 +1,43 @@
-.hogwarts-banner {
-    background-size: cover;
-    height: 100%;
-    width: 100%;
+body {
+    text-align: center;
     justify-content: center;
+}
+
+img {
+    width: 300px;
+    height: auto;
+}
+
+.classhogwarts {
+    flex: 1;
+    justify-content: center;
+}
+
+.grid {
+    border: 10px groove darkgray;  
+}
+
+.grid-row {
+    display: flex;
+}
+
+.cell {
+    flex: 1;
+    padding: 20px;
+}
+
+#gryffindor {
+    background-color: crimson;
+}
+
+#hufflepuff {
+    background-color: yellow;
+}
+
+#ravenclaw {
+    background-color: dodgerblue;
+}
+
+#slytherin {
+    background-color: green;
 }

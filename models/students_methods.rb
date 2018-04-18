@@ -2,13 +2,13 @@ require_relative('../db/sql_runner')
 
 class Student
 
-    attr_reader :id, :first_name, :last_name, :house, :age
+    attr_reader :id, :first_name, :last_name, :house_id, :age
 
     def initialize(options)
         @id = options["id"].to_i
         @first_name = options["first_name"]
         @last_name = options["last_name"]
-        @house = options["house"]
+        @house_id = options["house_id"].to_i
         @age = options["age"].to_i
     end
 
@@ -17,7 +17,7 @@ class Student
     end
 
     def house()
-        return "#{@house}"
+        return "#{@house_id}"
     end
 
     def age()
@@ -30,7 +30,7 @@ class Student
           VALUES
            ($1, $2, $3, $4) 
             RETURNING *"
-        values = [@first_name, @last_name, @house, @age]
+        values = [@first_name, @last_name, @house_id, @age]
         student_info = SqlRunner.run(sql, values)
         @id = student_info.first()["id"].to_i
     end
@@ -59,4 +59,11 @@ class Student
         values = [@id]
         SqlRunner.run(sql, values)
     end
+
+    # def house()
+    #     sql = "SELECT houses.* FROM houses INNER JOIN students ON houses.id WHERE student.id = $1;"
+    #     values = [@id]
+    #     students = SqlRunner.run(sql, values)
+    #     return Student.map_students(students)
+    # end
 end
