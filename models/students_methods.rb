@@ -16,6 +16,14 @@ class Student
         return "#{@first_name} #{@last_name}"
     end
 
+    def house()
+        return "#{@house}"
+    end
+
+    def age()
+        return "#{@age}"
+    end
+
     def save()
         sql = "INSERT INTO students
          (first_name, last_name, house, age)
